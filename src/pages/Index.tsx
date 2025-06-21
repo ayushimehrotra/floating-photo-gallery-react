@@ -2,6 +2,8 @@
 import { PolaroidGallery } from "@/components/PolaroidGallery";
 import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
+import { ResearchSection } from "@/components/ResearchSection";
+import { ProjectsSection } from "@/components/ProjectsSection";
 
 const Index = () => {
   return (
@@ -19,6 +21,12 @@ const Index = () => {
             <Navigation />
           </div>
         </div>
+      </div>
+      
+      {/* Research and Projects Sections */}
+      <div className="relative z-10 px-8 lg:px-16 pb-16">
+        <ResearchSection />
+        <ProjectsSection />
       </div>
     </div>
   );

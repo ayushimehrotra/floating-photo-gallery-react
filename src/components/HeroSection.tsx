@@ -9,8 +9,11 @@ export const HeroSection = () => {
         </h1>
         
         <div className="space-y-2 text-xl lg:text-2xl text-gray-300 font-light">
-          <p>undergrad @ caltech | ai security</p>
-          <p>researcher</p>
+          <p>
+            undergrad @ caltech |{" "}
+            <span className="text-blue-400">ai security researcher</span> |{" "}
+            <span className="text-yellow-400">building social projects</span>
+          </p>
         </div>
       </div>
     </div>

@@ -1,11 +1,24 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import { PolaroidGallery } from "@/components/PolaroidGallery";
+import { Navigation } from "@/components/Navigation";
+import { HeroSection } from "@/components/HeroSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-gray-900 text-white overflow-hidden">
+      <div className="relative min-h-screen flex items-center">
+        {/* Polaroid Gallery - Left Side */}
+        <div className="absolute left-0 top-0 w-1/2 h-full">
+          <PolaroidGallery />
+        </div>
+        
+        {/* Main Content - Right Side */}
+        <div className="relative z-10 w-full flex justify-end">
+          <div className="w-1/2 px-8 lg:px-16">
+            <HeroSection />
+            <Navigation />
+          </div>
+        </div>
       </div>
     </div>
   );

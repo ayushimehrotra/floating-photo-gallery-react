@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -101,7 +100,7 @@ export default {
 						transform: 'translateY(0px) rotate(0deg)'
 					},
 					'50%': {
-						transform: 'translateY(-10px) rotate(2deg)'
+						transform: 'translateY(-3px) rotate(0.5deg)'
 					}
 				},
 				'float-delayed': {
@@ -109,7 +108,7 @@ export default {
 						transform: 'translateY(0px) rotate(0deg)'
 					},
 					'50%': {
-						transform: 'translateY(-15px) rotate(-2deg)'
+						transform: 'translateY(-4px) rotate(-0.5deg)'
 					}
 				}
 			},
@@ -117,8 +116,8 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.8s ease-out',
-				'float': 'float 4s ease-in-out infinite',
-				'float-delayed': 'float-delayed 3s ease-in-out infinite'
+				'float': 'float 6s ease-in-out infinite',
+				'float-delayed': 'float-delayed 5s ease-in-out infinite'
 			}
 		}
 	},

@@ -106,7 +106,7 @@ export const ProjectsSection = () => {
           projects.
         </h2>
         <p className="text-lg sm:text-xl text-yellow-100 font-sans font-light leading-relaxed mt-2">
-          a collection of nonprofit work, research, and academic initiatives i've contributed to—each one an exploration into building systems, solving problems, and creating impact.
+          each one of these is a product of either my curiosity or passion to bring social change. currently, i'm interested in applied ai and cybersecurity ventures, in research, advocacy, and startups. 
         </p>
       </motion.div>
 

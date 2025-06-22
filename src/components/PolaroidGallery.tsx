@@ -6,7 +6,7 @@ interface PolaroidProps {
   rotation: number;
   delay: number;
   position: { left: string; top: string };
-  isActive: boolean;
+  zIndex: number;
   onClick: () => void;
 }
 
@@ -16,7 +16,7 @@ const Polaroid = ({
   rotation,
   delay,
   position,
-  isActive,
+  zIndex,
   onClick,
 }: PolaroidProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -45,14 +45,12 @@ const Polaroid = ({
 
   return (
     <div
-      className={`absolute bg-white p-3 shadow-2xl rounded-md cursor-pointer transition-all duration-700 ease-in-out
-        ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
-        ${isActive ? "scale-110 z-30" : "scale-100 z-10"}
-      `}
+      className={`absolute bg-white p-3 shadow-2xl rounded-md cursor-pointer transition-transform duration-500 ease-in-out`}
       style={{
         transform: `rotate(${rotation}deg)`,
         left: position.left,
         top: position.top,
+        zIndex,
       }}
       onClick={onClick}
     >
@@ -60,7 +58,7 @@ const Polaroid = ({
         <img
           src={src}
           alt={alt}
-          className="w-full h-full object-top object-cover rounded-md transition-transform duration-700"
+          className="w-full h-full object-top object-cover rounded-md transition-transform duration-500 ease-in-out"
           onLoad={() => setIsLoaded(true)}
         />
         {sparkles.map((pos, i) => (
@@ -80,10 +78,13 @@ const Polaroid = ({
 };
 
 export const PolaroidGallery = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [order, setOrder] = useState([0, 1, 2]);
 
   const handlePolaroidClick = (index: number) => {
-    setActiveIndex(prev => (prev === index ? null : index)); // toggle on/off
+    const newOrder = [...order];
+    const clicked = newOrder.splice(index, 1)[0];
+    newOrder.push(clicked);
+    setOrder(newOrder);
   };
 
   const polaroids = [
@@ -112,12 +113,12 @@ export const PolaroidGallery = () => {
 
   return (
     <div className="relative w-full h-full overflow-visible">
-      {polaroids.map((polaroid, index) => (
+      {order.map((originalIndex, i) => (
         <Polaroid
-          key={index}
-          {...polaroid}
-          isActive={activeIndex === index}
-          onClick={() => handlePolaroidClick(index)}
+          key={originalIndex}
+          {...polaroids[originalIndex]}
+          zIndex={order.length - i}
+          onClick={() => handlePolaroidClick(i)}
         />
       ))}
     </div>

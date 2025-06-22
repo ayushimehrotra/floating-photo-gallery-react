@@ -74,6 +74,11 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			keyframes: {
+				'shuffle-back': {
+					'0%': { transform: 'translateY(0) scale(1) rotate(0deg)' },
+					'40%': { transform: 'translateY(-5px) scale(1.03) rotate(1deg)' },
+					'100%': { transform: 'translateY(0) scale(1) rotate(0deg)' },
+					},
 				'accordion-down': {
 					from: {
 						height: '0'
@@ -122,8 +127,12 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.8s ease-out',
 				'float': 'float 6s ease-in-out infinite',
+				'shuffle-back': 'shuffle-back 0.4s ease-in-out',
 				'float-delayed': 'float-delayed 5s ease-in-out infinite'
-			}
+			},
+			transitionProperty: {
+				'z-index': 'z-index',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

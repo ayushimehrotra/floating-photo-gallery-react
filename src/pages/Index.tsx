@@ -7,24 +7,26 @@ import { ProjectsSection } from "@/components/ProjectsSection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white overflow-hidden">
-      <div className="relative min-h-screen flex items-center">
+    <div className="min-h-screen bg-black text-white overflow-x-hidden gap-x-4">
+      <div className="relative flex flex-col lg:flex-row items-center min-h-screen gap-x-8">
         {/* Polaroid Gallery - Left Side */}
-        <div className="absolute left-0 top-0 w-1/2 h-full">
+        <div className="relative w-full px-8 lg:w-1/2 h-96 lg:h-[80vh] overflow-hidden">
           <PolaroidGallery />
         </div>
+
         
         {/* Main Content - Right Side */}
-        <div className="relative z-10 w-full flex justify-end">
-          <div className="w-1/2 px-8 lg:px-16">
+        <div className="relative w-full px-8 flex justify-center lg:justify-end">
+          <div className="w-full lg:w-3/4 px-4 sm:px-6 lg:px-12 mt-8">
             <HeroSection />
             <Navigation />
           </div>
         </div>
+
       </div>
       
       {/* Research and Projects Sections */}
-      <div className="relative z-10 px-8 lg:px-16 pb-16">
+      <div className="relative z-0 px-8 lg:px-16 pb-16">
         <ResearchSection />
         <ProjectsSection />
       </div>

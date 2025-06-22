@@ -2,13 +2,13 @@
 export const Navigation = () => {
   const navItems = [
     { label: "research", href: "#research" },
-    { label: "blog", href: "#blog" },
+    { label: "work experience", href: "#work" },
     { label: "resume", href: "#resume" },
   ];
 
   return (
     <nav className="mt-16">
-      <ul className="flex space-x-16 text-2xl lg:text-3xl font-light">
+      <ul className="flex flex-wrap gap-x-8 gap-y-4 text-xl lg:text-3xl font-light">
         {navItems.map((item, index) => (
           <li key={item.label}>
             <a

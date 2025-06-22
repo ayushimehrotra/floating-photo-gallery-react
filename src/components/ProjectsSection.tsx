@@ -1,9 +1,9 @@
 
 export const ProjectsSection = () => {
   return (
-    <section className="mt-24 space-y-8">
+    <section id="work" className="mt-24 space-y-8">
       <h2 className="text-4xl lg:text-5xl font-light text-yellow-400 underline decoration-2 underline-offset-8">
-        projects
+        work experience
       </h2>
       
       <div className="flex items-start space-x-8">

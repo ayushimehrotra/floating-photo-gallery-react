@@ -14,13 +14,33 @@ const Polaroid = ({ src, alt, rotation, delay, position, animationClass }: Polar
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoaded(true), delay * 1000);
+    const timer = setTimeout(() => setIsLoaded(true), delay * 2000);
     return () => clearTimeout(timer);
   }, [delay]);
 
+ const [sparkles, setSparkles] = useState<{ top: string; left: string }[]>([]);
+
+  useEffect(() => {
+    const generateSparkles = () =>
+      Array.from({ length: 5 }).map(() => ({
+        top: `${Math.random() * 90}%`,
+        left: `${Math.random() * 90}%`,
+      }));
+
+    setSparkles(generateSparkles());
+
+    const interval = setInterval(() => {
+      setSparkles(generateSparkles());
+    }, 1500); // update every 1.5s
+
+    return () => clearInterval(interval);
+  }, []);
+
+
+
   return (
     <div
-      className={`absolute bg-white p-3 shadow-2xl transform transition-all duration-1000 hover:scale-110 hover:z-20 cursor-pointer hover:shadow-3xl ${animationClass} ${
+      className={`absolute bg-white p-3 shadow-2xl transform transition-all duration-1000 hover:scale-110 hover:z-20 cursor-pointer rounded-md ${
         isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       }`}
       style={{
@@ -30,18 +50,37 @@ const Polaroid = ({ src, alt, rotation, delay, position, animationClass }: Polar
         animationDelay: `${delay}s`,
       }}
     >
-      <div className="w-40 h-48 lg:w-48 lg:h-56 bg-gray-100 overflow-hidden">
+      <div className="relative w-36 h-44 sm:w-44 sm:h-52 md:w-52 md:h-60 lg:w-60 lg:h-72 bg-gray-100 overflow-hidden rounded-md">
         <img
           src={src}
           alt={alt}
-          className="w-full h-32 lg:h-40 object-cover"
+          className="w-full h-full object-cover rounded-md"
           onLoad={() => setIsLoaded(true)}
         />
-        <div className="h-8 lg:h-12 bg-white flex items-center justify-center">
-          <div className="w-4/5 h-0.5 bg-gray-200"></div>
-        </div>
+
+        {sparkles.map((pos, i) => (
+          <span
+            key={`${pos.top}-${pos.left}-${i}`}
+            className="sparkle-star"
+            style={{
+              position: 'absolute',
+              top: pos.top,
+              left: pos.left,
+              width: '6px',
+              height: '6px',
+              borderRadius: '50%',
+              backgroundColor: 'white',
+              opacity: 0.9,
+              animation: 'twinkle 1.2s ease-in-out infinite',
+            }}
+          />
+        ))}
       </div>
+
+
     </div>
+
+
   );
 };
 
@@ -53,7 +92,7 @@ export const PolaroidGallery = () => {
       rotation: -12,
       delay: 0.5,
       position: { left: "15%", top: "20%" },
-      animationClass: "animate-float",
+      animationClass: "",
     },
     {
       src: `https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=400&fit=crop`,
@@ -61,22 +100,12 @@ export const PolaroidGallery = () => {
       rotation: 8,
       delay: 1,
       position: { left: "35%", top: "45%" },
-      animationClass: "animate-float-delayed",
-    },
-    {
-      src: `https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=400&fit=crop`,
-      alt: "Research",
-      rotation: -5,
-      delay: 1.5,
-      position: { left: "10%", top: "65%" },
-      animationClass: "animate-float",
+      animationClass: "",
     },
   ];
 
   return (
-    <div className="relative w-full h-full overflow-hidden">
-      {/* Background Blur Effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-transparent z-0"></div>
+    <div className="relative w-full h-full overflow-visible">
       
       {/* Floating Polaroids */}
       {polaroids.map((polaroid, index) => (

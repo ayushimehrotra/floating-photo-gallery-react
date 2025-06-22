@@ -1,11 +1,11 @@
 
 export const HeroSection = () => {
   return (
-    <div className="space-y-8 animate-fade-in">
-      <div className="space-y-4">
-        <h1 className="text-5xl lg:text-6xl font-light tracking-wide">
+    <div className="space-y-4 animate-fade-in">
+      <div className="space-y-8">
+        <h1 className="text-6xl lg:text-6xl font-light font-[Open Sans] tracking-wide">
           Hi, I'm{" "}
-          <span className="font-normal">Ayushi Mehrotra</span>
+          <span className="font-normal font-[Open Sans]">Ayushi Mehrotra</span>
         </h1>
         
         <div className="space-y-2 text-xl lg:text-2xl text-gray-300 font-light">

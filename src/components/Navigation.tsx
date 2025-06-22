@@ -2,7 +2,7 @@ export const Navigation = () => {
   const navItems = [
     { label: "research", href: "#research" },
     { label: "projects", href: "#work" },
-    { label: "resume", href: "#resume" },
+    { label: "resume", href: "/resume.pdf", external: true },
   ];
 
   return (
@@ -12,6 +12,8 @@ export const Navigation = () => {
           <li key={item.label}>
             <a
               href={item.href}
+              target={item.external ? "_blank" : "_self"}
+              rel={item.external ? "noopener noreferrer" : ""}
               className="relative inline-block py-1 px-1 hover:text-blue-200 transition-all duration-200"
             >
               {item.label}

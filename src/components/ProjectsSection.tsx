@@ -8,13 +8,14 @@ const fadeIn = {
 
 export const ProjectsSection = () => {
   const projects = [
+    // Service
     {
       title: "Crack the Code",
       role: "Founder & Director",
       category: "Service",
       status: "past",
       description:
-        "Crack the Code is a nonprofit organization that organizes cybersecurity hackathons internationally for high schoolers and college students.",
+        "Crack the Code is a nonprofit organization that organizes cybersecurity hackathons for high schoolers and college students. I directed and executed 2 hackathons for ~300 students and raised $15k in sponsorships.",
       link: "https://crackthecode.dev/",
     },
     {
@@ -23,21 +24,77 @@ export const ProjectsSection = () => {
       category: "Service",
       status: "past",
       description:
-        "I run OC Coder, a sub-organization under STEAM for All, and we conduct monthly coding-related events for over 1000+ participants with 250+ volunteers!",
+        "I run OC Coder, a sub-organization under STEAM for All, and we conduct monthly coding-related events for over 2000+ participants with 350+ volunteers!",
       link: "https://steamforall.org/",
     },
     {
-      title: "RIT AI4Sec",
-      role: "Researcher",
-      category: "Labs",
+      title: "Troy Cyber",
+      role: "Advanced Instructor",
+      category: "Service",
+      status: "past",
+      description:
+        "I taught 60+ high school and middle school students (oh my, those middle schoolers) the curriculum of CCNA and CCNA Security. Though I never actually got the certification, I went to semis for Cyberpatriot twice :D",
+      link: "https://sites.google.com/fjuhsd.org/troyhscyberdefense/root-drive",
+    },
+
+    // Work
+    {
+      title: "stealth",
+      role: "---",
+      category: " ",
       status: "current",
       description:
-        "Mentored by Dipkamal Bhusal and Professor Nidhi Rastogi. Designed feature attribution for computer vision, presented at NeurIPS ATTRIB Workshop. Worked on patch attack detection with Toyota.",
+        "more stuff cookin :D",
+      link: "",
+    },
+    {
+      title: "AI4Sec @ RIT",
+      role: "Researcher",
+      category: " ",
+      status: "current",
+      description:
+        "I am mentored by Dipkamal Bhusal and Professor Nidhi Rastogi. Previously, I've designed and tested a novel feature attribution method for computer vision, which was presented at the NeurIPS ATTRIB Workshop. Currently working on patch attacks <3",
       link: "https://nidhirastogi.github.io/",
+    },
+    {
+      title: "AT&T Labs",
+      role: "Project “AdvMed”",
+      category: " ",
+      status: "past",
+      description:
+        "I was advised by Dr. Aritra Guha & Dr. Zhengyi Zhou. I engineering robust defenses against adversarial attacks in computer vision, which was presented as sole-author at IEEE ISBI. This work received 1st place in cybersecurity at ISEF 2024, the Non-Trivial Fellowship Award, and a presentation at the National Security Agency!",
+      link: "",
+    },
+    {
+      title: "Chapman University",
+      role: "Researcher",
+      category: " ",
+      status: "past",
+      description:
+        "I designed a novel optimal kidney exchange that included patient and donor choice with Professor Alexander Kurz, which was presented at the AAAS Annual Conference. I was also named AJAS Fellow along with a lot of cool people :) ",
+      link: "",
+    },
+    {
+      title: "Interaction Lab @ University of Southern California",
+      role: "Research Intern",
+      category: " ",
+      status: "past",
+      description:
+        "With Professor Maja Mataric and Dr. Lauren Klein (now postdoc @ Stanford), I designed Python visualizations of interactions between socially assistive robots and infants. I was also one of 4 freshman in the 100-student cohort of USC SHINE 2022!",
+      link: "https://uscinteractionlab.web.app/",
+    },
+    {
+      title: "Troy Science Olympiad",
+      role: "Team Member",
+      category: " ",
+      status: "past",
+      description:
+        "In my high school and middle school career, I've done Detector Building, WIDI, WiFi Lab, Cybersecurity, EXPD, Write it CAD it, Codebusters, etc. I've won 3rd place at Nationals for Write it CAD it (shout-out to Andrew!) and 5th place for cybersecurity at Nationals (go Josephine!)",
+      link: "https://sites.google.com/fjuhsd.org/troyscioly",
     },
   ];
 
-  const categories = ["Service", "Labs", "Awards"];
+  const categories = [" ", "Service"];
 
   return (
     <section
@@ -115,7 +172,7 @@ export const ProjectsSection = () => {
                             : "text-gray-300 hover:text-gray-200"
                         }`}
                       >
-                        View Project →
+                        View →
                       </a>
                     )}
                   </div>

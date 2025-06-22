@@ -8,16 +8,16 @@ import { ProjectsSection } from "@/components/ProjectsSection";
 const Index = () => {
   return (
     <div className="min-h-screen bg-zinc-900 text-white overflow-x-hidden gap-x-4">
-      <div className="relative flex flex-col lg:flex-row items-stretch lg:items-center min-h-screen gap-x-8">
+      <div className="relative flex flex-col lg:flex-row mt-8 items-stretch lg:items-center min-h-screen gap-x-8">
         {/* Polaroid Gallery - Left Side */}
-        <div className="relative w-full px-8 lg:w-2/3 h-96 sm:h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden lg:overflow-visible">
+        <div className="relative w-full px-8 lg:w-2/3 min-h-[15rem] sm:min-h-[60vh] md:min-h-[50vh] lg:min-h-[60vh] overflow-visible">
           <PolaroidGallery />
         </div>
 
         
         {/* Main Content - Right Side */}
         <div className="relative w-full px-8 flex justify-center lg:justify-end">
-          <div className="w-full lg:w-3/4 px-4 sm:px-6 lg:px-12 mt-8">
+          <div className="w-full lg:w-3/4 px-4 sm:px-6 lg:px-12">
             <HeroSection />
             <Navigation />
           </div>

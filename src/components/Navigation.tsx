@@ -8,7 +8,7 @@ export const Navigation = () => {
 
   return (
     <nav className="mt-16">
-      <ul className="flex flex-wrap gap-x-8 gap-y-4 text-xl lg:text-3xl font-light">
+      <ul className="flex flex-wrap gap-x-8 gap-y-4 text-xl lg:text-3xl font-sans font-light">
         {navItems.map((item, index) => (
           <li key={item.label}>
             <a

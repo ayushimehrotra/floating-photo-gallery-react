@@ -23,15 +23,15 @@ const Polaroid = ({ src, alt, rotation, delay, position, animationClass }: Polar
   useEffect(() => {
     const generateSparkles = () =>
       Array.from({ length: 5 }).map(() => ({
-        top: `${Math.random() * 90}%`,
-        left: `${Math.random() * 90}%`,
+        top: `${Math.random() * 100}%`,
+        left: `${Math.random() * 100}%`,
       }));
 
     setSparkles(generateSparkles());
 
     const interval = setInterval(() => {
       setSparkles(generateSparkles());
-    }, 1500); // update every 1.5s
+    }, 10000); // update every 1.5s
 
     return () => clearInterval(interval);
   }, []);
@@ -50,11 +50,11 @@ const Polaroid = ({ src, alt, rotation, delay, position, animationClass }: Polar
         animationDelay: `${delay}s`,
       }}
     >
-      <div className="relative w-36 h-44 sm:w-44 sm:h-52 md:w-52 md:h-60 lg:w-60 lg:h-72 bg-gray-100 overflow-hidden rounded-md">
+      <div className="relative w-36 h-44 sm:w-44 sm:h-52 md:w-52 md:h-60 lg:w-72 lg:h-80 bg-gray-100 overflow-hidden lg:overflow-visible rounded-md">
         <img
           src={src}
           alt={alt}
-          className="w-full h-full object-cover rounded-md"
+          className="w-full h-full object-top object-cover rounded-md"
           onLoad={() => setIsLoaded(true)}
         />
 
@@ -63,15 +63,9 @@ const Polaroid = ({ src, alt, rotation, delay, position, animationClass }: Polar
             key={`${pos.top}-${pos.left}-${i}`}
             className="sparkle-star"
             style={{
-              position: 'absolute',
               top: pos.top,
               left: pos.left,
-              width: '6px',
-              height: '6px',
-              borderRadius: '50%',
-              backgroundColor: 'white',
-              opacity: 0.9,
-              animation: 'twinkle 1.2s ease-in-out infinite',
+              animationDelay: `${Math.random() * 1.5}s`,
             }}
           />
         ))}
@@ -87,16 +81,16 @@ const Polaroid = ({ src, alt, rotation, delay, position, animationClass }: Polar
 export const PolaroidGallery = () => {
   const polaroids = [
     {
-      src: `https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=400&fit=crop`,
-      alt: "Workspace",
+      src: `/photos/photo-1.JPG`,
+      alt: "ayushi's pictures 1",
       rotation: -12,
       delay: 0.5,
       position: { left: "15%", top: "20%" },
       animationClass: "",
     },
     {
-      src: `https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=400&fit=crop`,
-      alt: "Technology",
+      src: `/photos/photo-2.JPG`,
+      alt: "ayushi's pictures 2",
       rotation: 8,
       delay: 1,
       position: { left: "35%", top: "45%" },

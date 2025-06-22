@@ -29,7 +29,7 @@ export const ResearchSection = () => {
         viewport={{ once: true }}
         className="bg-blue-200/10 border border-blue-300/10 shadow-md rounded-2xl backdrop-blur-sm hover:shadow-lg transition px-6 sm:px-8 md:px-10 lg:px-14 py-10 space-y-8"
       >
-        <h3 className="text-2xl font-semibold text-blue-100 underline underline-offset-4">
+        <h3 className="text-2xl font-sans font-semibold text-blue-100 underline underline-offset-4">
           Recent Works
         </h3>
 
@@ -52,8 +52,8 @@ export const ResearchSection = () => {
             {
               authors: "Mehrotra, A.",
               title: "AdvMed: Detecting Adversarial Attacks in Medical Deep Learning Systems.",
-              venue: "ISBI 2024",
-              link: "https://biomedicalimaging.org/2024/isbi24-technical-program/",
+              venue: "ISBI 2024, ISEF 2024",
+              link: "https://isef.net/project/robo057-detecting-attacks-in-medical-deep-learning",
               label: "abstract",
             },
             {

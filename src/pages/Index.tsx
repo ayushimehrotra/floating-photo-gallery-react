@@ -4,6 +4,7 @@ import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
 import { ResearchSection } from "@/components/ResearchSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -29,6 +30,10 @@ const Index = () => {
       <div className="relative z-0 px-8 lg:px-16 pb-16">
         <ResearchSection />
         <ProjectsSection />
+      </div>
+
+      <div className="relative z-0 px-8 lg:px-16 pb-16">
+        <Footer />
       </div>
     </div>
   );

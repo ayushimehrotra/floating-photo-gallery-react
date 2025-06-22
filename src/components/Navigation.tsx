@@ -2,7 +2,7 @@
 export const Navigation = () => {
   const navItems = [
     { label: "research", href: "#research" },
-    { label: "work experience", href: "#work" },
+    { label: "projects", href: "#work" },
     { label: "resume", href: "#resume" },
   ];
 

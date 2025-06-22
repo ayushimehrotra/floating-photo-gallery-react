@@ -11,7 +11,7 @@ export const HeroSection = () => {
         <div className="space-y-2 text-xl font-sans lg:text-2xl text-gray-300 font-light">
           <p>
             <span>undergrad @ caltech</span> |{" "}
-            <span className="text-blue-400">ai security researcher</span> |{" "}
+            <span className="text-blue-400">ai security researcher @ rit</span> |{" "}
             <span className="text-yellow-400">building social projects</span>
           </p>
         </div>

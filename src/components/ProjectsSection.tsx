@@ -1,11 +1,13 @@
 
 export const ProjectsSection = () => {
   return (
-    <section id="work" className="mt-24 space-y-8">
-      <h2 className="text-4xl lg:text-5xl font-light text-yellow-400 underline decoration-2 underline-offset-8">
-        work experience
-      </h2>
-      
+    <section id="work" className="mt-24 px-4 sm:px-6 lg:px-20 xl:px-28 max-w-7xl mx-auto space-y-12">
+      <div className="space-y-4">
+        <h2 className="text-4xl lg:text-5xl font-script font-light text-yellow-400 underline decoration-2 underline-offset-8">
+          projects.
+        </h2>
+      </div>
+
       <div className="flex items-start space-x-8">
         <div className="flex-1 space-y-4">
           <h3 className="text-2xl font-normal text-purple-400 underline">

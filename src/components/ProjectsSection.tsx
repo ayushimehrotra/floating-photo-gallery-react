@@ -42,7 +42,7 @@ export const ProjectsSection = () => {
   return (
     <section
       id="work"
-      className="mt-24 px-4 sm:px-6 lg:px-20 xl:px-28 max-w-7xl mx-auto space-y-16"
+      className="scroll-mt-24 mt-24 px-4 sm:px-6 lg:px-20 xl:px-28 max-w-7xl mx-auto space-y-16"
     >
       <motion.div {...fadeIn} viewport={{ once: true }}>
         <h2 className="text-4xl lg:text-5xl font-script font-light text-yellow-400 underline decoration-2 underline-offset-8">

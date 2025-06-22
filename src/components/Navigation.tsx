@@ -1,4 +1,3 @@
-
 export const Navigation = () => {
   const navItems = [
     { label: "research", href: "#research" },
@@ -7,19 +6,16 @@ export const Navigation = () => {
   ];
 
   return (
-    <nav className="mt-16">
-      <ul className="flex flex-wrap gap-x-8 gap-y-4 text-xl lg:text-3xl font-sans font-light">
+    <nav className="mt-0">
+      <ul className="flex gap-x-6 text-sm sm:text-base font-sans font-light tracking-wide">
         {navItems.map((item, index) => (
           <li key={item.label}>
             <a
               href={item.href}
-              className="relative inline-block transition-all duration-300 hover:text-gray-300 group"
-              style={{
-                animationDelay: `${0.8 + index * 0.2}s`,
-              }}
+              className="relative inline-block py-1 px-1 hover:text-blue-200 transition-all duration-200"
             >
               {item.label}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-200 transition-all duration-300 group-hover:w-full"></span>
             </a>
           </li>
         ))}

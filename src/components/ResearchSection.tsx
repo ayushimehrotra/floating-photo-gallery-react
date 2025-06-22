@@ -10,7 +10,7 @@ export const ResearchSection = () => {
   return (
     <section
       id="research"
-      className="mt-24 px-4 sm:px-6 lg:px-20 xl:px-28 max-w-7xl mx-auto space-y-12"
+      className="scroll-mt-24 mt-24 px-4 sm:px-6 lg:px-20 xl:px-28 max-w-7xl mx-auto space-y-12"
     >
       {/* Header */}
       <motion.div {...fadeIn} viewport={{ once: true }}>
